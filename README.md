@@ -9,3 +9,4 @@ Edit Tool Project
 3. return문 작성
 4. TextInput 작성
     4-1. TextInput 컴포넌트 안에 onClickButton 함수작성
+*클래스형이 아닌 함수형은 import React from "react"; 를 불러오지 않아도 됨

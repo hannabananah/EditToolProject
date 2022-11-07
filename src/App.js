@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import ImageInput from "./components/imageInput";
 import TextInput from "./components/textInput";
+import TextArea from "./components/textArea";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
@@ -19,7 +20,7 @@ function App({}) {
   };
   console.log(previewImage);
   const [txt, setTxt] = useState([]);
-  
+
   // TextInput 눌렀을 때 실행되는 함수
   const onClickButton = () => {
     const input = {
@@ -28,6 +29,16 @@ function App({}) {
     setTxt([...txt, input]);
   };
   console.log(txt);
+
+  // TextArea 내용이 바뀔 때마다 실행되는 함수->text: ""의 스트링값을 넣어줌
+  const onChangeTextInput = (e, index) => {
+    console.log(e.target.value);
+    console.log(index);
+    const txtCopy = JSON.parse(JSON.stringify(txt)); //txt 스테이트를 복사
+    txtCopy[index].text = e.target.value;
+    setTxt(txtCopy);
+  };
+  
   return (
     <div className="App">
       {/* 텍스트 인풋 */}
@@ -37,6 +48,15 @@ function App({}) {
 
       {previewImage.map((item, index) => {
         return <img src={item.src} key={index} />;
+      })}
+      {txt.map((item, index) => {
+        return (
+          <TextArea
+            content={item.text}
+            key={index}
+            onChangeTextInput={(e) => onChangeTextInput(e, index)}
+          />
+        );
       })}
     </div>
   );
