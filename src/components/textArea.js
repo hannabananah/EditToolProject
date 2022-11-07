@@ -5,6 +5,14 @@ const TextArea = ({ content, onChangeTextInput }) => {
       html={content}
       placeholder="울랄라"
       onChange={onChangeTextInput}
+      style={{
+        width: 200,
+        border: "1px solid orange",
+        backgroundColor: "beige",
+        borderRadius: 20,
+        display: "inline-block",
+        marginTop: 20,
+      }}
     />
   );
 };
