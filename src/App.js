@@ -44,10 +44,12 @@ function App({}) {
     <div className="App">
       {/* 배경 */}
       <BackGround />
-      {/* 텍스트 인풋 */}
-      <TextInput onClick={onClickButton} />
-      {/* 이미지 버튼 */}
-      <ImageInput onSelectFile={onSelectFileButton} />
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        {/* 텍스트 인풋 */}
+        <TextInput onClick={onClickButton} />
+        {/* 이미지 버튼 */}
+        <ImageInput onSelectFile={onSelectFileButton} />
+      </div>
       {previewImage.map((item, index) => {
         return <img src={item.src} key={index} />;
       })}
