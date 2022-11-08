@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import BackGround from "./components/backGround.js";
-import ImageInput from "./components/imageInput";
-import TextInput from "./components/textInput";
-import TextArea from "./components/textArea";
+import BackGround from "~/components/backGround.js";
+import ImageInput from "~/components/imageInput";
+import TextInput from "~/components/textInput";
+import TextArea from "~/components/textArea";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);

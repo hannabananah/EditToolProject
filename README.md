@@ -1,4 +1,5 @@
 Edit Tool Project
+포토앨범
 
 0. 수연님이 보내준 카톡에 절대경로 방법 있음
 1. 이미지(인풋 태그 사용), 텍스트 버튼 만들기
@@ -10,3 +11,5 @@ Edit Tool Project
 4. TextInput 작성
     4-1. TextInput 컴포넌트 안에 onClickButton 함수작성
 *클래스형이 아닌 함수형은 import React from "react"; 를 불러오지 않아도 됨
+
+*데이터베이스 저장소 필요(클라우디너리로 사진이 전송되도록)
