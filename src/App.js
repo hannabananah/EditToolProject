@@ -44,7 +44,9 @@ function App({}) {
     <div className="App">
       {/* 배경 */}
       <BackGround />
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      <div
+        style={{ display: "flex", justifyContent: "flex-end", columnGap: 20 }}
+      >
         {/* 텍스트 인풋 */}
         <TextInput onClick={onClickButton} />
         {/* 이미지 버튼 */}
