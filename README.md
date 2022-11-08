@@ -13,3 +13,7 @@ Edit Tool Project
 *클래스형이 아닌 함수형은 import React from "react"; 를 불러오지 않아도 됨
 
 *데이터베이스 저장소 필요(클라우디너리로 사진이 전송되도록)
+
+
+*import HTMLFlipBook from "react-pageflip";
+이용해서 책 넘기는 효과 적용하기 해야됨

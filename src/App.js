@@ -4,6 +4,7 @@ import BackGround from "~/components/backGround.js";
 import ImageInput from "~/components/imageInput";
 import TextInput from "~/components/textInput";
 import TextArea from "~/components/textArea";
+import Demo from "~/components/demo";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
@@ -43,7 +44,8 @@ function App({}) {
   return (
     <div className="App">
       {/* 배경 */}
-      <BackGround />
+      {/* <BackGround /> */}
+      <Demo />
       <div
         style={{ display: "flex", justifyContent: "flex-end", columnGap: 20 }}
       >
