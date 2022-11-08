@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import BackGround from "./components/backGround.js";
 import ImageInput from "./components/imageInput";
 import TextInput from "./components/textInput";
 import TextArea from "./components/textArea";
@@ -38,14 +39,15 @@ function App({}) {
     txtCopy[index].text = e.target.value;
     setTxt(txtCopy);
   };
-  
+
   return (
     <div className="App">
+      {/* 배경 */}
+      <BackGround />
       {/* 텍스트 인풋 */}
       <TextInput onClick={onClickButton} />
       {/* 이미지 버튼 */}
       <ImageInput onSelectFile={onSelectFileButton} />
-
       {previewImage.map((item, index) => {
         return <img src={item.src} key={index} />;
       })}
