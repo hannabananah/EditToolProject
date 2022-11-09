@@ -5,20 +5,20 @@ import useWindowWide from "./usewidth";
 export default function Demo() {
   const [width, setWidth] = useState(800);
   const [height, setHeight] = useState(500);
-//   const widthScreen = useWindowWide();
+  //   const widthScreen = useWindowWide();
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(0);
   const book = useRef();
 
-//   useEffect(() => {
-//     if (widthScreen < 600) {
-//       setWidth(400);
-//       setHeight(300);
-//     } else {
-//       setWidth(Math.ceil((0.9 * widthScreen) / 2));
-//       setHeight(Math.ceil((0.6 * widthScreen) / 2));
-//     }
-//   }, [widthScreen]);
+  //   useEffect(() => {
+  //     if (widthScreen < 600) {
+  //       setWidth(400);
+  //       setHeight(300);
+  //     } else {
+  //       setWidth(Math.ceil((0.9 * widthScreen) / 2));
+  //       setHeight(Math.ceil((0.6 * widthScreen) / 2));
+  //     }
+  //   }, [widthScreen]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,67 +41,30 @@ export default function Demo() {
         width={width}
         height={height}
         ref={book}
+        maxShadowOpacity={0.5}
+        showCover={true}
+        mobileScrollSupport={true}
       >
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
-        <div className="page">
-          <img src="https://picsum.photos/510/300?random" alt="person" />
-        </div>
+        <div className="page">1</div>
+        <div className="page">2</div>
+        <div className="page">3</div>
+        <div className="page">4</div>
+        <div className="page">5</div>
+        <div className="page">6</div>
+        <div className="page">7</div>
+        <div className="page">8</div>
+        <div className="page">9</div>
+        <div className="page">10</div>
+        <div className="page">11</div>
+        <div className="page">12</div>
+        <div className="page">13</div>
+        <div className="page">14</div>
+        <div className="page">15</div>
+        <div className="page">16</div>
+        <div className="page">17</div>
+        <div className="page">18</div>
+        <div className="page">19</div>
+        <div className="page">20</div>
       </HTMLFlipBook>
       <span
         onClick={() => book.current.pageFlip().flipPrev()}
@@ -110,7 +73,7 @@ export default function Demo() {
         <i className="fas fa-chevron-left"></i>
       </span>
       <span className="info-page">
-        {page} - {total}
+        {page-1}-{page} / {total}
       </span>
     </div>
   );
