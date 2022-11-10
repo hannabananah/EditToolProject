@@ -1,11 +1,12 @@
 import ContentEditable from "react-contenteditable";
-const TextArea = ({ content, onChangeTextInput, onMouseDown }) => {
+const TextArea = ({ id,content, onChangeTextInput, onMouseDown }) => {
   return (
     <ContentEditable
       html={content}
       placeholder="울랄라"
       onChange={onChangeTextInput}
       onMouseDown={onMouseDown}
+      id={id}
       style={{
         width: 200,
         border: "1px solid orange",
@@ -14,6 +15,7 @@ const TextArea = ({ content, onChangeTextInput, onMouseDown }) => {
         display: "inline-block",
         marginTop: 20,
         color: "blue",
+        position:'absolute',
       }}
     />
   );

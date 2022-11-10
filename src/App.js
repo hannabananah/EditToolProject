@@ -9,7 +9,8 @@ import Demo from "~/components/demo";
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
   const imageId = useRef(0); // 이미지 아이디 생성
-
+  const inputId = useRef(0); // 인풋 아이디 생성
+  // image 파일탐색기에서 선택 됐을 때 실행되는 함수
   const onSelectFileButton = (e) => {
     console.log(e.target.files);
     console.log(Array.isArray(e.target.files));
@@ -31,8 +32,10 @@ function App({}) {
   const onClickButton = () => {
     const input = {
       text: "",
+      id: inputId.current,
     };
     setTxt([...txt, input]);
+    inputId.current += 1; //동일한 코드 inputId.current = inputId.current + 1
   };
   console.log(txt);
 
@@ -135,6 +138,7 @@ function App({}) {
             key={index}
             onChangeTextInput={(e) => onChangeTextInput(e, index)}
             onMouseDown={(e) => startDrag(e, index, "input")}
+            id={`txt_${item.id}`}
           />
         );
       })}
