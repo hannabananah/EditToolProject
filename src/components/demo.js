@@ -2,7 +2,9 @@ import "./styles.css";
 import HTMLFlipBook from "react-pageflip";
 import { useEffect, useRef, useState } from "react";
 import useWindowWide from "./usewidth";
-export default function Demo() {
+import TextArea from "~/components/textArea";
+
+export default function Demo({ previewImage, txt, onChangeTextInput }) {
   const [width, setWidth] = useState(800);
   const [height, setHeight] = useState(700);
   //   const widthScreen = useWindowWide();
@@ -42,8 +44,27 @@ export default function Demo() {
         maxShadowOpacity={0.5}
         showCover={true}
         mobileScrollSupport={true}
+        useMouseEvents={false}
+        onChangeState="read"
       >
-        <div className="page">1</div>
+        <div className="page">
+          {previewImage.map((item, index) => {
+            return (
+              <div style={{ position: "absolute" }}>
+                <img src={item.src} key={index} />
+              </div>
+            );
+          })}
+          {txt.map((item, index) => {
+            return (
+              <TextArea
+                content={item.text}
+                key={index}
+                onChangeTextInput={(e) => onChangeTextInput(e, index)}
+              />
+            );
+          })}
+        </div>
         <div className="page">2</div>
         <div className="page">3</div>
         <div className="page">4</div>

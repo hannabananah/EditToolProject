@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import BackGround from "~/components/backGround.js";
 import ImageInput from "~/components/imageInput";
@@ -8,6 +8,8 @@ import Demo from "~/components/demo";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
+  const imageId = useRef(0); // 이미지 아이디 생성
+
   const onSelectFileButton = (e) => {
     console.log(e.target.files);
     console.log(Array.isArray(e.target.files));
@@ -16,11 +18,13 @@ function App({}) {
       let images = [];
       images.push({
         src: URL.createObjectURL(item),
+        id: imageId.current,
       });
       setPreviewImage((pre) => pre.concat(images));
+      imageId.current += 1; //동일한 코드 imageId.current = imageId.current + 1
     });
   };
-  console.log(previewImage);
+  console.log("previewImage---------->>>>>", previewImage);
   const [txt, setTxt] = useState([]);
 
   // TextInput 눌렀을 때 실행되는 함수
@@ -40,6 +44,59 @@ function App({}) {
     txtCopy[index].text = e.target.value;
     setTxt(txtCopy);
   };
+  //  드래그
+  let img_L = 0;
+  let img_T = 0;
+  let targetObj;
+
+  // 이미지 움직이기
+  const moveDrag = (e) => {
+    let e_obj = window.event ? window.event : e;
+    let dmvx = parseInt(e_obj.clientX + img_L);
+    let dmvy = parseInt(e_obj.clientY + img_T);
+    targetObj.style.left = dmvx + "px";
+    targetObj.style.top = dmvy + "px";
+    return false;
+  };
+
+  // 드래그 멈추기
+  const stopDrag = () => {
+    document.onmousemove = null;
+    document.onmouseup = null;
+  };
+  const getLeft = (o) => {
+    console.log("o--------------------------------", o);
+    return window.pageXOffset + o.getBoundingClientRect().left;
+    // parseInt(o.style.left.replace('px', ''));
+  };
+
+  const getTop = (o) => {
+    return window.pageYOffset + o.getBoundingClientRect().top;
+    // parseInt(o.style.top.replace('px', ''));
+  };
+
+  // 드래그 시작
+  const startDrag = (e, id, type) => {
+    // e.preventDefault();
+    console.log(e);
+    let obj;
+
+    if (type == "image") {
+      obj = document.querySelector(`#img_${id}`);
+    } else if (type == "input") {
+      obj = document.querySelector(`#txt_${id}`);
+    }
+
+    targetObj = obj;
+    let e_obj = window.event ? window.event : e;
+    img_L = getLeft(obj) - e_obj.clientX;
+    img_T = getTop(obj) - e_obj.clientY;
+
+    document.onmousemove = moveDrag;
+    document.onmouseup = stopDrag;
+
+    // if(e_obj.preventDefault)e_obj.preventDefault();
+  };
 
   return (
     <div className="App">
@@ -53,19 +110,39 @@ function App({}) {
         {/* 이미지 버튼 */}
         <ImageInput onSelectFile={onSelectFileButton} />
       </div>
-      {previewImage.map((item, index) => {
-        return <img src={item.src} key={index} />;
-      })}
+      <div style={{ position: "relative" }}>
+        {previewImage.map((item, index) => {
+          return (
+            <div
+              key={index}
+              id={`img_${item.id}`}
+              style={
+                {
+                  // position: "absolute",
+                }
+              }
+              onMouseDown={(e) => startDrag(e, index, "image")}
+            >
+              <img src={item.src} key={index} />
+            </div>
+          );
+        })}
+      </div>
       {txt.map((item, index) => {
         return (
           <TextArea
             content={item.text}
             key={index}
             onChangeTextInput={(e) => onChangeTextInput(e, index)}
+            onMouseDown={(e) => startDrag(e, index, "input")}
           />
         );
       })}
-      <Demo />
+      {/* <Demo
+        previewImage={previewImage}
+        txt={txt}
+        onChangeTextInput={onChangeTextInput}
+      /> */}
     </div>
   );
 }
