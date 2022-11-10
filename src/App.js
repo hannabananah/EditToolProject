@@ -45,7 +45,6 @@ function App({}) {
     <div className="App">
       {/* 배경 */}
       {/* <BackGround /> */}
-      <Demo />
       <div
         style={{ display: "flex", justifyContent: "flex-end", columnGap: 20 }}
       >
@@ -66,6 +65,7 @@ function App({}) {
           />
         );
       })}
+      <Demo />
     </div>
   );
 }

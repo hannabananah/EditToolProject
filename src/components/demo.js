@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import useWindowWide from "./usewidth";
 export default function Demo() {
   const [width, setWidth] = useState(800);
-  const [height, setHeight] = useState(500);
+  const [height, setHeight] = useState(700);
   //   const widthScreen = useWindowWide();
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(0);
@@ -32,10 +32,8 @@ export default function Demo() {
     <div className="flex" style={{ padding: "50px 0" }}>
       <span
         onClick={() => book.current.pageFlip().flipNext()}
-        className={"next button"}
-      >
-        <i className="fas fa-chevron-right"></i>
-      </span>
+        className={"next"}
+      ></span>
       <HTMLFlipBook
         onFlip={updatePage}
         width={width}
@@ -68,12 +66,10 @@ export default function Demo() {
       </HTMLFlipBook>
       <span
         onClick={() => book.current.pageFlip().flipPrev()}
-        className={"previous button"}
-      >
-        <i className="fas fa-chevron-left"></i>
-      </span>
+        className={"previous"}
+      ></span>
       <span className="info-page">
-        {page-1}-{page} / {total}
+        {page - 1}-{page} / {total}
       </span>
     </div>
   );

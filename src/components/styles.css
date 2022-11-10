@@ -26,19 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
-  background-color: gray;
 }
 
-.button {
-  position: absolute;
-  color: red;
-  z-index: 1000;
-  cursor: pointer;
-}
-.button i {
-  font-size: 30px;
-}
 .previous {
   left: 1%;
 }
