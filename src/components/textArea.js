@@ -1,5 +1,5 @@
 import ContentEditable from "react-contenteditable";
-const TextArea = ({ id,content, onChangeTextInput, onMouseDown }) => {
+const TextArea = ({ id, content, onChangeTextInput, onMouseDown }) => {
   return (
     <ContentEditable
       html={content}
@@ -15,7 +15,8 @@ const TextArea = ({ id,content, onChangeTextInput, onMouseDown }) => {
         display: "inline-block",
         marginTop: 20,
         color: "blue",
-        position:'absolute',
+        position: "absolute",
+        zIndex: 2,
       }}
     />
   );

@@ -26,13 +26,13 @@ const DragDemo = ({ previewImage }) => (
       return (
         <Rnd
           default={{
-            x: 150,
-            y: 205,
-            width: 800,
-            height: 400,
+            x: 100,
+            y: 100,
+            width: "auto",
+            height: "auto",
           }}
-          minWidth={500}
-          minHeight={190}
+          minWidth={200}
+          //   minHeight={100}
           bounds="window"
           style={{ backgroundColor: "#fff" }}
         >
