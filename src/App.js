@@ -119,14 +119,16 @@ function App({}) {
             <div
               key={index}
               id={`img_${item.id}`}
-              style={
-                {
-                  // position: "absolute",
-                }
-              }
+              style={{
+                position: "relative",
+              }}
               onMouseDown={(e) => startDrag(e, index, "image")}
             >
-              <img src={item.src} key={index} />
+              <img
+                src={item.src}
+                key={index}
+                style={{ position: "absolute" }}
+              />
             </div>
           );
         })}
