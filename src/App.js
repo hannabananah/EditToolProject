@@ -106,7 +106,14 @@ function App({}) {
       {/* 배경 */}
       {/* <BackGround /> */}
       <div
-        style={{ display: "flex", justifyContent: "flex-end", columnGap: 20 }}
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          columnGap: 20,
+          position: "fixed", //소스를 드래그 할 시 포지션이 고정되어 있어야 그 위치 그대로 잡힘
+          top: 0,
+          right: 0,
+        }}
       >
         {/* 텍스트 인풋 */}
         <TextInput onClick={onClickButton} />
