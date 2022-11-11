@@ -5,6 +5,8 @@ import ImageInput from "~/components/imageInput";
 import TextInput from "~/components/textInput";
 import TextArea from "~/components/textArea";
 import Demo from "~/components/demo";
+import DragDemo from "~/components/dragDemo";
+import { Rnd } from "react-rnd";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
@@ -120,7 +122,7 @@ function App({}) {
         {/* 이미지 버튼 */}
         <ImageInput onSelectFile={onSelectFileButton} />
       </div>
-      <div style={{ position: "relative" }}>
+      {/* <div style={{ position: "relative" }}>
         {previewImage.map((item, index) => {
           return (
             <div
@@ -139,7 +141,7 @@ function App({}) {
             </div>
           );
         })}
-      </div>
+      </div> */}
       {txt.map((item, index) => {
         return (
           <TextArea
@@ -156,6 +158,7 @@ function App({}) {
         txt={txt}
         onChangeTextInput={onChangeTextInput}
       /> */}
+      <DragDemo previewImage={previewImage} />
     </div>
   );
 }
