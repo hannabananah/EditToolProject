@@ -136,7 +136,7 @@ function App({}) {
               <img
                 src={item.src}
                 key={index}
-                style={{ position: "absolute" }}
+                style={{ position: "absolute", }}
               />
             </div>
           );

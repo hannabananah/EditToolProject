@@ -13,7 +13,7 @@ const Box = ({ src }) => (
     <article className="media">
       <div className="media-left">
         <figure className="image">
-          <img src={src} draggable="false" />
+          <img className="dragImg" src={src} draggable="false" />
         </figure>
       </div>
     </article>
@@ -25,18 +25,19 @@ const DragDemo = ({ previewImage }) => (
     {previewImage.map((item, index) => {
       return (
         <Rnd
-          default={{
-            x: 100,
-            y: 100,
-            width: "auto",
-            height: "auto",
-          }}
-          minWidth={200}
-          //   minHeight={100}
-          bounds="window"
-          style={{ backgroundColor: "#fff" }}
+          // default={{
+          //   x: 100,
+          //   y: 100,
+          //   width: "auto",
+          //   height: "auto",
+          // }}
+          // minWidth={200}
+          // //   minHeight={100}
+          // bounds="window"
+          // style={{ backgroundColor: "#fff" }}
         >
-          <Box src={item.src} />
+          {/* <Box src={item.src} /> */}
+          <img className="dragImg" src={item.src} draggable="false" />
         </Rnd>
       );
     })}
