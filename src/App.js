@@ -7,6 +7,7 @@ import TextArea from "~/components/textArea";
 import Demo from "~/components/demo";
 import DragDemo from "~/components/dragDemo";
 import { Rnd } from "react-rnd";
+import Drawer from "~/components/drawer";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
@@ -102,6 +103,11 @@ function App({}) {
 
     // if(e_obj.preventDefault)e_obj.preventDefault();
   };
+  const [open, setOpen] = useState(false);
+  const opendrawer = () => {
+    setOpen((pre) => !pre); //previous: 이전상태에서 setOpen를 눌러 true<->false 변환
+    console.log('ok')
+  };
 
   return (
     <div className="App">
@@ -109,12 +115,13 @@ function App({}) {
       {/* <BackGround /> */}
       <div
         style={{
+          width: "100%",
           display: "flex",
           justifyContent: "flex-end",
           columnGap: 20,
           position: "fixed", //소스를 드래그 할 시 포지션이 고정되어 있어야 그 위치 그대로 잡힘
           top: 0,
-          right: 0,
+          left: 0,
         }}
       >
         {/* 텍스트 인풋 */}
@@ -159,8 +166,11 @@ function App({}) {
         onChangeTextInput={onChangeTextInput}
       /> */}
       <DragDemo previewImage={previewImage} />
+      <Drawer
+        opendrawer={opendrawer}
+        open={open}
+      />
     </div>
   );
 }
-
 export default App;

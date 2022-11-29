@@ -41,3 +41,11 @@
 .dragImg {
   width: 100%;
 }
+.optionOn {
+  left: 0;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.optionOff {
+  left: -100px;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
