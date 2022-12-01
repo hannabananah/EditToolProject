@@ -10,8 +10,18 @@ import { Rnd } from "react-rnd";
 import Drawer from "~/components/drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPalette } from "@fortawesome/free-solid-svg-icons";
+import SelectColour from "~/components/selectColour";
+import { useStyles } from "~/styles/dropDown";
 
 function App({}) {
+  const classes = useStyles();
+
+  const styleLink = document.createElement("link");
+  styleLink.rel = "stylesheet";
+  styleLink.href =
+    "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+  document.head.appendChild(styleLink);
+
   const [previewImage, setPreviewImage] = useState([]);
   const imageId = useRef(0); // 이미지 아이디 생성
   const inputId = useRef(0); // 인풋 아이디 생성
@@ -113,14 +123,15 @@ function App({}) {
 
   return (
     <div className="App">
-      <header>
+      <header className={classes.header}>
         <div className="header_btn_layout">
           <button className="header_btn">제작의도</button>
           <button className="header_btn">사용법</button>
         </div>
-        <div>
+        <div className={classes.headerRight}>
           <FontAwesomeIcon icon={faPalette} />
           <span>앨범컬러 변경:</span>
+          <SelectColour />
         </div>
       </header>
       <section className="sub_header">

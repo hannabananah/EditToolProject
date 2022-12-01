@@ -41,6 +41,7 @@ header {
   align-items: center;
 }
 .title {
+  margin: 0;
   margin-left: 16px;
   color: #444;
 }
