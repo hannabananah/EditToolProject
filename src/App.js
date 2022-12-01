@@ -9,7 +9,7 @@ import DragDemo from "~/components/dragDemo";
 import { Rnd } from "react-rnd";
 import Drawer from "~/components/drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPalette } from "@fortawesome/free-solid-svg-icons";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
@@ -118,7 +118,10 @@ function App({}) {
           <button className="header_btn">제작의도</button>
           <button className="header_btn">사용법</button>
         </div>
-        <div>앨범컬러 변경:</div>
+        <div>
+          <FontAwesomeIcon icon={faPalette} />
+          <span>앨범컬러 변경:</span>
+        </div>
       </header>
       <section className="sub_header">
         <div className="sub_header_left">
