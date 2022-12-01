@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../styles/styles.css";
 import HTMLFlipBook from "react-pageflip";
 import { useEffect, useRef, useState } from "react";
 import useWindowWide from "./usewidth";

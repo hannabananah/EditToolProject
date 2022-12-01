@@ -1,14 +1,23 @@
+import { useStyles } from "~/styles/imageInput";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImages } from "@fortawesome/free-solid-svg-icons";
+
 const ImageInput = ({ onSelectFile }) => {
+  const classes = useStyles();
   return (
-    <label>
-      <input
-        type="file"
-        name="file"
-        accept="image/* svg"
-        multiple
-        onChange={onSelectFile}
-      />
-    </label>
+    <div>
+      <label>
+        <FontAwesomeIcon icon={faImages} />
+        <input
+          type="file"
+          name="file"
+          accept="image/* svg"
+          multiple
+          onChange={onSelectFile}
+          className={classes.imageLabelStyle}
+        />
+      </label>
+    </div>
   );
 };
 

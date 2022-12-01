@@ -8,6 +8,8 @@ import Demo from "~/components/demo";
 import DragDemo from "~/components/dragDemo";
 import { Rnd } from "react-rnd";
 import Drawer from "~/components/drawer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function App({}) {
   const [previewImage, setPreviewImage] = useState([]);
@@ -106,70 +108,58 @@ function App({}) {
   const [open, setOpen] = useState(false);
   const opendrawer = () => {
     setOpen((pre) => !pre); //previous: 이전상태에서 setOpen를 눌러 true<->false 변환
-    console.log('ok')
+    console.log("ok");
   };
 
   return (
     <div className="App">
-      {/* 배경 */}
-      {/* <BackGround /> */}
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "flex-end",
-          columnGap: 20,
-          position: "fixed", //소스를 드래그 할 시 포지션이 고정되어 있어야 그 위치 그대로 잡힘
-          top: 0,
-          left: 0,
-        }}
-      >
-        {/* 텍스트 인풋 */}
-        <TextInput onClick={onClickButton} />
-        {/* 이미지 버튼 */}
-        <ImageInput onSelectFile={onSelectFileButton} />
-      </div>
-      {/* <div style={{ position: "relative" }}>
-        {previewImage.map((item, index) => {
+      <header>
+        <div className="header_btn_layout">
+          <button className="header_btn">제작의도</button>
+          <button className="header_btn">사용법</button>
+        </div>
+        <div>앨범컬러 변경:</div>
+      </header>
+      <section className="sub_header">
+        <div className="sub_header_left">
+          <button onClick={opendrawer} className="hambuger">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          <h2 className="title">Photo Album</h2>
+        </div>
+        <div
+          style={{
+            alignContent: "center",
+            display: "flex",
+            columnGap: 10,
+            // position: "fixed", //소스를 드래그 할 시 포지션이 고정되어 있어야 그 위치 그대로 잡힘
+            // top: 0,
+            // left: 0,
+          }}
+        >
+          {/* 텍스트 인풋 */}
+          <TextInput onClick={onClickButton} />
+          {/* 이미지 버튼 */}
+          <ImageInput onSelectFile={onSelectFileButton} />
+        </div>
+      </section>
+      <div style={{ display: "flex", flex: 1 }}>
+        <Drawer open={open} />
+        {/* 배경 */}
+        {/* <BackGround /> */}
+        {txt.map((item, index) => {
           return (
-            <div
+            <TextArea
+              content={item.text}
               key={index}
-              id={`img_${item.id}`}
-              style={{
-                position: "relative",
-              }}
-              onMouseDown={(e) => startDrag(e, index, "image")}
-            >
-              <img
-                src={item.src}
-                key={index}
-                style={{ position: "absolute", }}
-              />
-            </div>
+              onChangeTextInput={(e) => onChangeTextInput(e, index)}
+              onMouseDown={(e) => startDrag(e, index, "input")}
+              id={`txt_${item.id}`}
+            />
           );
         })}
-      </div> */}
-      {txt.map((item, index) => {
-        return (
-          <TextArea
-            content={item.text}
-            key={index}
-            onChangeTextInput={(e) => onChangeTextInput(e, index)}
-            onMouseDown={(e) => startDrag(e, index, "input")}
-            id={`txt_${item.id}`}
-          />
-        );
-      })}
-      {/* <Demo
-        previewImage={previewImage}
-        txt={txt}
-        onChangeTextInput={onChangeTextInput}
-      /> */}
-      <DragDemo previewImage={previewImage} />
-      <Drawer
-        opendrawer={opendrawer}
-        open={open}
-      />
+        <DragDemo previewImage={previewImage} />
+      </div>
     </div>
   );
 }

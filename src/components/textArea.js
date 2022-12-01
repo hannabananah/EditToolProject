@@ -1,5 +1,9 @@
 import ContentEditable from "react-contenteditable";
+import { useStyles } from "~/styles/textArea";
+
 const TextArea = ({ id, content, onChangeTextInput, onMouseDown }) => {
+  const classes = useStyles();
+
   return (
     <ContentEditable
       html={content}
@@ -7,17 +11,7 @@ const TextArea = ({ id, content, onChangeTextInput, onMouseDown }) => {
       onChange={onChangeTextInput}
       onMouseDown={onMouseDown}
       id={id}
-      style={{
-        width: 200,
-        border: "1px solid orange",
-        backgroundColor: "beige",
-        borderRadius: 20,
-        display: "inline-block",
-        marginTop: 20,
-        color: "blue",
-        position: "absolute",
-        zIndex: 2,
-      }}
+      className={classes.textBubbleStyle1}
     />
   );
 };
