@@ -9,5 +9,6 @@ export const useStyles = makeStyles({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    columnGap: "5px",
   },
 });

@@ -94,6 +94,12 @@ header {
 }
 .option_buttons {
   width: 50%;
+  background-color: transparent;
+  border: none;
+}
+.option_buttons:hover, .option_buttons:active {
+  background-color:#efefef;
+  border-radius: 5px;
 }
 .hambuger {
   display: flex;

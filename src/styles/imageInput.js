@@ -5,4 +5,7 @@ export const useStyles = makeStyles({
     width: 0,
     visibility: "hidden",
   },
+  photoIcon: {
+    fontSize: "20px",
+  },
 });

@@ -5,4 +5,7 @@ export const useStyles = makeStyles({
     backgroundColor: "transparent",
     border: "none",
   },
+  penIcon: {
+    fontSize: "20px",
+  },
 });

@@ -55,9 +55,10 @@ const SelectColour = () => {
       options={colourOptions}
       defaultValue={colourOptions[0].value}
       style={{
-        width: "150px",
+        width: "110px",
         backgroundColor: "transparent",
         border: "none",
+        textAlign: "center",
       }}
     />
   );

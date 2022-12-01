@@ -7,7 +7,7 @@ const ImageInput = ({ onSelectFile }) => {
   return (
     <div>
       <label>
-        <FontAwesomeIcon icon={faImages} />
+        <FontAwesomeIcon icon={faImages} className={classes.photoIcon}/>
         <input
           type="file"
           name="file"

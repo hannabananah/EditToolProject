@@ -12,7 +12,8 @@ const Drawer = ({ open }) => {
         style={{
           width: 100,
           height: "calc(100vh - 76px)",
-          backgroundColor: "azure",
+          backgroundColor: "#fff",
+          borderRight: "1px solid #e2e2e2",
         }}
       >
         <button className="option_buttons">1</button>
