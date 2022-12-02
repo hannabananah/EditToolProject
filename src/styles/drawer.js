@@ -13,9 +13,11 @@ export const useStyles = makeStyles({
     height: 30,
     backgroundColor: "transparent",
     border: "none",
+    fontWeight: "500",
     "&:active,&:hover": {
-      backgroundColor: "#efefef",
+      backgroundColor: "#1274ac",
       borderRadius: 5,
+      color: "#fff",
     },
   },
 });
