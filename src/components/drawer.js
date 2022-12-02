@@ -1,4 +1,8 @@
+import { useStyles } from "~/styles/drawer";
+
 const Drawer = ({ open }) => {
+  const classes = useStyles();
+
   return (
     <div
       style={{
@@ -8,20 +12,13 @@ const Drawer = ({ open }) => {
       }}
       className={open ? "optionOn" : "optionOff"}
     >
-      <div
-        style={{
-          width: 100,
-          height: "calc(100vh - 76px)",
-          backgroundColor: "#fff",
-          borderRight: "1px solid #e2e2e2",
-        }}
-      >
-        <button className="option_buttons">1</button>
-        <button className="option_buttons">2</button>
-        <button className="option_buttons">3</button>
-        <button className="option_buttons">4</button>
-        <button className="option_buttons">5</button>
-        <button className="option_buttons">6</button>
+      <div className={classes.buttonList}>
+        <button className={classes.optionButtons}>1</button>
+        <button className={classes.optionButtons}>2</button>
+        <button className={classes.optionButtons}>3</button>
+        <button className={classes.optionButtons}>4</button>
+        <button className={classes.optionButtons}>5</button>
+        <button className={classes.optionButtons}>6</button>
       </div>
     </div>
   );

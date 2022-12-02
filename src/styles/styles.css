@@ -40,6 +40,10 @@ header {
   flex-direction: row;
   align-items: center;
 }
+.down_btn_style {
+  margin-left: 5px;
+  font-size: 20px;
+}
 .title {
   margin: 0;
   margin-left: 16px;
@@ -90,16 +94,7 @@ header {
 }
 .optionOff {
   left: -100px;
-  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.option_buttons {
-  width: 50%;
-  background-color: transparent;
-  border: none;
-}
-.option_buttons:hover, .option_buttons:active {
-  background-color:#efefef;
-  border-radius: 5px;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .hambuger {
   display: flex;

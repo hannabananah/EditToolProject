@@ -9,7 +9,11 @@ import DragDemo from "~/components/dragDemo";
 import { Rnd } from "react-rnd";
 import Drawer from "~/components/drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faPalette } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faPalette,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
 import SelectColour from "~/components/selectColour";
 import { useStyles } from "~/styles/dropDown";
 
@@ -155,6 +159,10 @@ function App({}) {
           <TextInput onClick={onClickButton} />
           {/* 이미지 버튼 */}
           <ImageInput onSelectFile={onSelectFileButton} />
+          <FontAwesomeIcon
+            icon={faDownload}
+            className="down_btn_style"
+          />
         </div>
       </section>
       <div style={{ display: "flex", flex: 1 }}>
