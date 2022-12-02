@@ -7,5 +7,6 @@ export const useStyles = makeStyles({
   },
   penIcon: {
     fontSize: "20px",
+    cursor: "pointer",
   },
 });

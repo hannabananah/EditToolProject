@@ -7,5 +7,6 @@ export const useStyles = makeStyles({
   },
   photoIcon: {
     fontSize: "20px",
+    cursor: "pointer",
   },
 });

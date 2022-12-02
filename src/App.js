@@ -159,10 +159,7 @@ function App({}) {
           <TextInput onClick={onClickButton} />
           {/* 이미지 버튼 */}
           <ImageInput onSelectFile={onSelectFileButton} />
-          <FontAwesomeIcon
-            icon={faDownload}
-            className="down_btn_style"
-          />
+          <FontAwesomeIcon icon={faDownload} className="down_btn_style" />
         </div>
       </section>
       <div style={{ display: "flex", flex: 1 }}>
