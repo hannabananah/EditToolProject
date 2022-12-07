@@ -48,7 +48,7 @@ header {
 .title {
   margin: 0;
   margin-left: 16px;
-  color: #444;
+  color: #111;
 }
 .page:nth-child(2n) {
   max-width: 95%;

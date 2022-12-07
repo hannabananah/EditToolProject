@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
-import BackGround from "~/components/backGround.js";
+import BackGround from "~/components/backGround";
 import ImageInput from "~/components/imageInput";
 import TextInput from "~/components/textInput";
 import TextArea from "~/components/textArea";
